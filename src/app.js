@@ -23,7 +23,7 @@ var options = {
 app.use('/', express.static(__dirname + '/static'))
 
 
-app.get('/new_driver/', async (_req, res) => {
+app.get('/api/', async (_req, res) => {
   res.json("ok")
 })
 
