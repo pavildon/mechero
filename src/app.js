@@ -7,13 +7,24 @@ createServer(
   createYoga({
     schema: createSchema({
       typeDefs: /* GraphQL */ `
-        type Query {
-          hello: String
+        type Event{
+            id: ID,
+            title: String,
+            date: Int
         }
+
+        type Query {
+          event: Event 
+        }
+
       `,
       resolvers: {
         Query: {
-          hello: () => "Hello Hello Hello",
+          event: () => {
+            return {
+              id: 0, title: "lala", date: 1000,
+            };
+          },
         },
       },
     }),
